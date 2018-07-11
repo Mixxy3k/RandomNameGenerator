@@ -14,6 +14,8 @@ namespace RandomNameGenerator
         char[] vowel = { 'a', 'e', 'i', 'o', 'u', 'y' };
         char[] consonants = { 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z' };
 
+        private String GenerateLetter() { return ((char)random.Next(97, 123)).ToString(); }
+
         public string GenerateNewWord(int lenght = 0)
         { 
             string GeneratedWord = String.Empty;
@@ -74,10 +76,5 @@ namespace RandomNameGenerator
             }
             return 0;
         }
-
-        private String GenerateLetter() { return ((char)random.Next(97, 123)).ToString(); }
-        private Char GenerateCharLetter() { return (char)random.Next(97, 123); }
-
-        //private String GenerateBigLetter() { return ((char)random.Next(65, 91)).ToString(); }
     }
 }

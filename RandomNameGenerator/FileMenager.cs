@@ -34,7 +34,7 @@ namespace RandomNameGenerator
         {
             if (File.Exists(fileLocation))
                 return true;
-            Console.WriteLine("> Cannot load file: {0}", fileLocation);
+            Console.WriteLine($"> Cannot load file: {fileLocation}");
             return false;
         }
     }
