@@ -1,38 +1,49 @@
 ﻿using System;
+using User;
+using Files;
 
-namespace RandomNameGenerator
+namespace RandomNameAndSentenceGenerator
 {
     class Program
     {
         static void Main(string[] args)
         {
-            NameGenerator nameGenerator = new NameGenerator();
+            NameAndSentenceGenerator nameGenerator = new NameAndSentenceGenerator();
             FileMenager fileMenager = new FileMenager();
-
-            int number = 0;
-            bool complete = false;
-            Console.WriteLine("---------- Name Geneartor ----------");
-            Console.WriteLine("> Press any key to generate a Name");
-            while (complete == false)
+            UserMenager userMenager = new UserMenager();
+            
+            bool saveToFile = true;
+            for (; ; )
             {
-                Console.WriteLine("> How much word you need? ");
-                Console.Write("> ");
-                var input = Console.ReadLine();
-                if (int.TryParse(input, out int number1))
+                Console.Clear();
+                Console.WriteLine("------- Random word and sentence Geneartor -------");
+                Console.WriteLine("> 1 Generate random word");
+                Console.WriteLine("> 2 Generate random sentence");
+                Console.WriteLine("> 3 Generate random document");
+                Console.WriteLine("> 4 Generate super strong password");
+                Console.WriteLine("> Any Other number to exit");
+                Console.WriteLine($"> Saving to file: {saveToFile}, if you want change it press 0");
+                switch (userMenager.GetInput())
                 {
-                    number = number1;
-                    complete = true;
+                    case 0:
+                        saveToFile = !saveToFile;
+                        break;
+                    case 1:
+                        nameGenerator.GenerateNewWord();
+                        break;
+                    case 2:
+                        nameGenerator.GenerateNewSentence();
+                        break;
+                    case 3:
+                        //GenerateRandomDocument();
+                        break;
+                    case 4:
+                        //GeneratePassword();
+                        break;
+                    default:
+                        return;
                 }
-                else
-                    Console.WriteLine($"> Seriosly?! \"{input}\" is not a number!");
             }
-            for (int i = 1; i <= number; i++)
-            {
-                fileMenager.AddToOutputBuffer(nameGenerator.GenerateNewWord(0));
-            }
-            fileMenager.WriteToFile("ListNames.txt");
-            Console.WriteLine("> Generated, check file!");
-            Console.ReadKey();
         }
     }
 }

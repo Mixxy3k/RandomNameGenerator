@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace RandomNameGenerator
+namespace RandomNameAndSentenceGenerator
 {
-    class NameGenerator
+    class NameAndSentenceGenerator
     {
         private readonly Random random = new Random();
 
@@ -21,9 +21,7 @@ namespace RandomNameGenerator
             string GeneratedWord = String.Empty;
 
             if (lenght == 0)
-            {
                 lenght = random.Next(3, 8);
-            }
 
             for (int i = 0; i < lenght; i++)
             {
@@ -44,6 +42,16 @@ namespace RandomNameGenerator
             }
             return GeneratedWord;
         }
+        public string GenerateNewSentence()
+        {
+            String sentence = String.Empty;
+            int lenght = random.Next(3, 12);
+            for(int i=0; i < lenght; i++)
+            {
+                sentence += (GenerateNewWord() + " "); 
+            }
+            return sentence;
+        }
 
         private void DrawLetter(int vowelProbability)
         {
@@ -57,9 +65,7 @@ namespace RandomNameGenerator
                 };
                 return;
             }
-            
             newLetter = GenerateLetter();
-            
         }
     
         private int GetLetterType(String letter)
