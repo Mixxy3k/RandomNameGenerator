@@ -23,7 +23,7 @@ namespace RandomNameAndSentenceGenerator
                 Console.WriteLine("> 4 Generate super strong password");
                 Console.WriteLine("> Any Other number to exit");
                 Console.WriteLine($"> Saving to file: {saveToFile}, if you want change it press 0");
-                switch (userMenager.GetInput())
+                switch (userMenager.Input())
                 {
                     case 0:
                         saveToFile = !saveToFile;
