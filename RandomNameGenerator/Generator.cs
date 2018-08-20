@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace RandomNameAndSentenceGenerator
+namespace NameGenerator
 {
-    class NameAndSentenceGenerator
+    class Generator
     {
         private readonly Random random = new Random();
 
@@ -11,46 +11,50 @@ namespace RandomNameAndSentenceGenerator
 
         private enum CharType { VOWEL = 1, COSONANTS = 2, UNKNOW = 0 };
 
-        char[] vowel = { 'a', 'e', 'i', 'o', 'u', 'y' };
-        char[] consonants = { 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z' };
+        readonly char[] vowel = { 'a', 'e', 'i', 'o', 'u', 'y' };
+        readonly char[] consonants = { 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z' };
 
         private String GenerateLetter() { return ((char)random.Next(97, 123)).ToString(); }
 
-        public string GenerateNewWord(int lenght = 0)
-        { 
+        public String GenerateNewWord(int lenght = 0)
+        {
             string GeneratedWord = String.Empty;
 
             if (lenght == 0)
                 lenght = random.Next(3, 8);
+            //Console.WriteLine($"> LENGHT: {lenght}");
+            
 
             for (int i = 0; i < lenght; i++)
             {
                 if (i == 0)
                 {
-                    lastLetter = GenerateLetter();
+                    lastLetter = GenerateLetter().ToUpper();
                     GeneratedWord += lastLetter;
                     continue;
                 }
                 if (GetLetterType(lastLetter) == (int)CharType.VOWEL)
-                    DrawLetter(57);
-   
+                    DrawLetter(30);
+
                 else if (GetLetterType(lastLetter) == (int)CharType.COSONANTS)
-                    DrawLetter(48);
-   
+                    DrawLetter(40);
+
                 GeneratedWord += newLetter;
                 lastLetter = newLetter;
             }
             return GeneratedWord;
         }
+
         public string GenerateNewSentence()
         {
             String sentence = String.Empty;
             int lenght = random.Next(3, 12);
-            for(int i=0; i < lenght; i++)
+            sentence += GenerateNewWord();
+            for (int i = 0; i < lenght; i++)
             {
-                sentence += (GenerateNewWord() + " "); 
+                sentence += (GenerateNewWord().ToLower() + " ");
             }
-            return sentence;
+            return sentence + ".";
         }
 
         private void DrawLetter(int vowelProbability)
@@ -60,14 +64,12 @@ namespace RandomNameAndSentenceGenerator
             if (rand < vowelProbability)
             {
                 while (GetLetterType(newLetter) != (int)CharType.VOWEL || newLetter == lastLetter)
-                {
                     newLetter = GenerateLetter();
-                };
                 return;
             }
             newLetter = GenerateLetter();
         }
-    
+
         private int GetLetterType(String letter)
         {
             foreach (char c in vowel)

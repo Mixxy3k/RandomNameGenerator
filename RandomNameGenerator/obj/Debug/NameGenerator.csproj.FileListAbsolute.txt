@@ -1,0 +1,13 @@
+C:\Users\mixxy\source\repos\NameGenerator\NameGenerator\bin\Debug\NameGenerator.exe.config
+C:\Users\mixxy\source\repos\NameGenerator\NameGenerator\bin\Debug\NameGenerator.exe
+C:\Users\mixxy\source\repos\NameGenerator\NameGenerator\bin\Debug\NameGenerator.pdb
+C:\Users\mixxy\source\repos\NameGenerator\NameGenerator\obj\Debug\NameGenerator.csproj.CoreCompileInputs.cache
+C:\Users\mixxy\source\repos\NameGenerator\NameGenerator\obj\Debug\NameGenerator.exe
+C:\Users\mixxy\source\repos\NameGenerator\NameGenerator\obj\Debug\NameGenerator.pdb
+D:\Projekty\RandomNameGenerator\RandomNameGenerator\obj\Debug\NameGenerator.csprojAssemblyReference.cache
+D:\Projekty\RandomNameGenerator\RandomNameGenerator\obj\Debug\NameGenerator.csproj.CoreCompileInputs.cache
+D:\Projekty\RandomNameGenerator\RandomNameGenerator\obj\Debug\NameGenerator.exe
+D:\Projekty\RandomNameGenerator\RandomNameGenerator\obj\Debug\NameGenerator.pdb
+D:\Projekty\RandomNameGenerator\RandomNameGenerator\bin\Debug\NameGenerator.exe.config
+D:\Projekty\RandomNameGenerator\RandomNameGenerator\bin\Debug\NameGenerator.exe
+D:\Projekty\RandomNameGenerator\RandomNameGenerator\bin\Debug\NameGenerator.pdb

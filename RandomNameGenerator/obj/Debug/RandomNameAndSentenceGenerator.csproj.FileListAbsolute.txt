@@ -1,0 +1,7 @@
+D:\Projekty\RandomNameGenerator\RandomNameGenerator\bin\Debug\RandomNameGenerator.exe.config
+D:\Projekty\RandomNameGenerator\RandomNameGenerator\bin\Debug\RandomNameGenerator.exe
+D:\Projekty\RandomNameGenerator\RandomNameGenerator\bin\Debug\RandomNameGenerator.pdb
+D:\Projekty\RandomNameGenerator\RandomNameGenerator\obj\Debug\RandomNameAndSentenceGenerator.csprojAssemblyReference.cache
+D:\Projekty\RandomNameGenerator\RandomNameGenerator\obj\Debug\RandomNameAndSentenceGenerator.csproj.CoreCompileInputs.cache
+D:\Projekty\RandomNameGenerator\RandomNameGenerator\obj\Debug\RandomNameGenerator.exe
+D:\Projekty\RandomNameGenerator\RandomNameGenerator\obj\Debug\RandomNameGenerator.pdb

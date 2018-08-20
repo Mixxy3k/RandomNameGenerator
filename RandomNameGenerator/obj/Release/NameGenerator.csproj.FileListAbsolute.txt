@@ -1,0 +1,7 @@
+C:\Users\mixxy\source\repos\NameGenerator\NameGenerator\bin\Release\NameGenerator.exe.config
+C:\Users\mixxy\source\repos\NameGenerator\NameGenerator\bin\Release\NameGenerator.exe
+C:\Users\mixxy\source\repos\NameGenerator\NameGenerator\bin\Release\NameGenerator.pdb
+C:\Users\mixxy\source\repos\NameGenerator\NameGenerator\obj\Release\NameGenerator.csprojAssemblyReference.cache
+C:\Users\mixxy\source\repos\NameGenerator\NameGenerator\obj\Release\NameGenerator.csproj.CoreCompileInputs.cache
+C:\Users\mixxy\source\repos\NameGenerator\NameGenerator\obj\Release\NameGenerator.exe
+C:\Users\mixxy\source\repos\NameGenerator\NameGenerator\obj\Release\NameGenerator.pdb

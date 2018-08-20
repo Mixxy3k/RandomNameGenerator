@@ -1,48 +1,28 @@
 ﻿using System;
-using User;
-using Files;
 
-namespace RandomNameAndSentenceGenerator
+namespace NameGenerator
 {
     class Program
     {
         static void Main(string[] args)
         {
-            NameAndSentenceGenerator nameGenerator = new NameAndSentenceGenerator();
-            FileMenager fileMenager = new FileMenager();
             UserMenager userMenager = new UserMenager();
-            
-            bool saveToFile = true;
-            for (; ; )
+            FileMenager fileMenager = new FileMenager(userMenager);
+            userMenager.useFileMenager(fileMenager);
+
+            while (!userMenager.exit)
             {
-                Console.Clear();
-                Console.WriteLine("------- Random word and sentence Geneartor -------");
-                Console.WriteLine("> 1 Generate random word");
-                Console.WriteLine("> 2 Generate random sentence");
-                Console.WriteLine("> 3 Generate random document");
-                Console.WriteLine("> 4 Generate super strong password");
-                Console.WriteLine("> Any Other number to exit");
-                Console.WriteLine($"> Saving to file: {saveToFile}, if you want change it press 0");
-                switch (userMenager.Input())
-                {
-                    case 0:
-                        saveToFile = !saveToFile;
-                        break;
-                    case 1:
-                        nameGenerator.GenerateNewWord();
-                        break;
-                    case 2:
-                        nameGenerator.GenerateNewSentence();
-                        break;
-                    case 3:
-                        //GenerateRandomDocument();
-                        break;
-                    case 4:
-                        //GeneratePassword();
-                        break;
-                    default:
-                        return;
-                }
+                userMenager.ConsoleLog($"----- Name Generator v {userMenager.version}  -----");
+
+                userMenager.ConsoleLog("Write number next to the to an option and press Enter to accept");
+                userMenager.ConsoleLog($"Writing to buffor {userMenager.saveToBuffor}! Things waiting in buffor: {fileMenager.outputData.Count}!");
+                userMenager.ConsoleLog("0. Settings");
+                userMenager.ConsoleLog("1. Generate Word - Generate a word from ASCI table");
+                userMenager.ConsoleLog("2. Generate Sentence - Generate a sentence created by random generated word");
+                userMenager.ConsoleLog("3. Save to file");
+                userMenager.ConsoleLog("4. Exit", null, ConsoleColor.Red);
+
+                userMenager.Loop();
             }
         }
     }
